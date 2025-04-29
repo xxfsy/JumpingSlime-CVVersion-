@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Jumping Slime/Scenes/MainMenu.unity
+    guid: 940c7220f34c10546b37f13492a75c9f
+  - enabled: 1
+    path: Assets/Jumping Slime/Scenes/Game.unity
+    guid: 01366e5d74235e34dbd13a3e5a9d219f
+  - enabled: 1
+    path: Assets/Jumping Slime/Scenes/Shop.unity
+    guid: 288f53884cc204546bd59bc2733b23fd
+  m_configObjects: {}

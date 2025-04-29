@@ -1,0 +1,13 @@
+{
+  "idSave": 2,
+  "isFirstSession": false,
+  "language": "ru",
+  "promptDone": false,
+  "CoinsCount": 4,
+  "BestScore": 1923,
+  "PlayerSkins": "{\"Items\":[{\"_skinSprite\":{\"instanceID\":25560},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":true,\"IsChoosen\":true,\"Cost\":0,\"IndexInArray\":0},{\"_skinSprite\":{\"instanceID\":25560},\"_skinColor\":{\"r\":1.0,\"g\":0.21226418018341065,\"b\":0.9464704990386963,\"a\":1.0},\"IsBought\":false,\"IsChoosen\":false,\"Cost\":1,\"IndexInArray\":1},{\"_skinSprite\":{\"instanceID\":25560},\"_skinColor\":{\"r\":0.1462264060974121,\"g\":0.5186380743980408,\"b\":1.0,\"a\":1.0},\"IsBought\":false,\"IsChoosen\":false,\"Cost\":2,\"IndexInArray\":2},{\"_skinSprite\":{\"instanceID\":25560},\"_skinColor\":{\"r\":1.0,\"g\":0.0,\"b\":0.12884140014648438,\"a\":1.0},\"IsBought\":false,\"IsChoosen\":false,\"Cost\":3,\"IndexInArray\":3},{\"_skinSprite\":{\"instanceID\":25562},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":false,\"IsChoosen\":false,\"Cost\":4,\"IndexInArray\":4}]}",
+  "BackgroundSkins": "{\"Items\":[{\"_skinSprite\":{\"instanceID\":25564},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":true,\"IsChoosen\":true,\"Cost\":0,\"IndexInArray\":0},{\"_skinSprite\":{\"instanceID\":25566},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":false,\"IsChoosen\":false,\"Cost\":1,\"IndexInArray\":1},{\"_skinSprite\":{\"instanceID\":25568},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":false,\"IsChoosen\":false,\"Cost\":2,\"IndexInArray\":2}]}",
+  "CurrentPlayerSkin": "{\"_skinSprite\":{\"instanceID\":25560},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":true,\"IsChoosen\":true,\"Cost\":0,\"IndexInArray\":0}",
+  "CurrentBackgroundSkin": "{\"_skinSprite\":{\"instanceID\":25564},\"_skinColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"IsBought\":true,\"IsChoosen\":true,\"Cost\":0,\"IndexInArray\":0}",
+  "IsFirstVisit": false
+}
