@@ -49,4 +49,4 @@ MonoBehaviour:
   _mainMenuSceneName: MainMenu
   _playButton: {fileID: 0}
   _shopButton: {fileID: 0}
-  _ratingGameCDInSec: 10
+  _ratingGameCDInSec: 60

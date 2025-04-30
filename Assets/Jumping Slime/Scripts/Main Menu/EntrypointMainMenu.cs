@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EntrypointMainMenu : MonoBehaviour
@@ -10,7 +8,7 @@ public class EntrypointMainMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (_isFirstRun) 
+        if (_isFirstRun)
         {
             Debug.Log("EntryPoint");
 

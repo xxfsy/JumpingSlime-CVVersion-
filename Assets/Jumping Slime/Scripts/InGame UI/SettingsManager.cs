@@ -6,12 +6,12 @@ using YG;
 public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;
-    [SerializeField] private GameObject _joystick; 
+    [SerializeField] private GameObject _joystick;
 
     [SerializeField] private Toggle _soundToggle, _musicToggle;
     [SerializeField] private Image _soundCheckmark, _musicCheckmark;
 
-    private void Start() 
+    private void Start()
     {
         if (SoundManager.Instance.BackgroundMusicAudioSource.mute)
         {
@@ -40,14 +40,14 @@ public class SettingsManager : MonoBehaviour
     {
         Time.timeScale = 0;
         _settingsPanel.SetActive(true);
-        if (YandexGame.EnvironmentData.isMobile) 
+        if (YandexGame.EnvironmentData.isMobile)
             _joystick.SetActive(false);
     }
 
     public void CloseSettings()
     {
         _settingsPanel.SetActive(false);
-        if (YandexGame.EnvironmentData.isMobile) 
+        if (YandexGame.EnvironmentData.isMobile)
             _joystick.SetActive(true);
         Time.timeScale = 1;
     }

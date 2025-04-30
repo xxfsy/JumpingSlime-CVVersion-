@@ -5,7 +5,7 @@ public class ButtonSizeScaler : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     private Vector3 _defaultLocalScale, _scaledScale;
     private float _scaleCoef = 1.1f;
-    
+
     private void Start()
     {
         _defaultLocalScale = transform.localScale;

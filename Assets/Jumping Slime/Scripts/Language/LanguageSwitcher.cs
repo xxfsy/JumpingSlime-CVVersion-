@@ -1,6 +1,6 @@
+using System.Collections;
 using UnityEngine;
 using YG;
-using System.Collections;
 
 public class LanguageSwitcher : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class LanguageSwitcher : MonoBehaviour
 
         _currentLaguage = YandexGame.lang;
 
-        for(int i = 0; i < _languages.Length; i++)
+        for (int i = 0; i < _languages.Length; i++)
         {
             if (_languages[i] == _currentLaguage)
                 _currentLanguageIndex = i;
@@ -28,8 +28,6 @@ public class LanguageSwitcher : MonoBehaviour
 
     public void SwitchLanguage()
     {
-        //Debug.Log("lng switched");
-
         if (_currentLanguageIndex == _languages.Length - 1)
             _currentLanguageIndex = 0;
         else

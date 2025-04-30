@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -34,7 +32,7 @@ public class SceneSwitcher : MonoBehaviour
         Debug.Log("SceneSwitcher Start Initialized");
     }
 
-    private void OnDestroy() 
+    private void OnDestroy()
     {
         Debug.Log("Disabled");
         SceneManager.sceneLoaded -= DateManager.Instance.SaveToCloud;
@@ -43,7 +41,7 @@ public class SceneSwitcher : MonoBehaviour
 
     public void TryToSuggestGiveRating(Scene scene, LoadSceneMode sceneMode)
     {
-        if(scene.name == MainMenuSceneName && Time.time >= _ratingGameCDInSec)
+        if (scene.name == MainMenuSceneName && Time.time >= _ratingGameCDInSec)
         {
             YandexGame.ReviewShow(false);
         }

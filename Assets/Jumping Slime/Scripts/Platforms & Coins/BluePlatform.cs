@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BluePlatform : MonoBehaviour
@@ -13,21 +11,21 @@ public class BluePlatform : MonoBehaviour
         _lowerLeftCornerPosition = Camera.main.ScreenToWorldPoint(Vector3.zero);
         _platformSize = this.GetComponent<Renderer>().bounds.size;
 
-        _isMovingToRight = Random.Range(0, 2) == 1; 
+        _isMovingToRight = Random.Range(0, 2) == 1;
     }
 
     private void Update()
     {
-        if(_isMovingToRight)
+        if (_isMovingToRight)
         {
-            if (transform.position.x <= -_lowerLeftCornerPosition.x - _platformSize.x/2)
+            if (transform.position.x <= -_lowerLeftCornerPosition.x - _platformSize.x / 2)
                 transform.position += new Vector3(_speedOfMoving * Time.deltaTime, 0, 0);
             else
                 _isMovingToRight = false;
         }
         else
         {
-            if (transform.position.x >= _lowerLeftCornerPosition.x + _platformSize.x/2)
+            if (transform.position.x >= _lowerLeftCornerPosition.x + _platformSize.x / 2)
                 transform.position -= new Vector3(_speedOfMoving * Time.deltaTime, 0, 0);
             else
                 _isMovingToRight = true;

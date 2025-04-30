@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BrownPlatform : MonoBehaviour
@@ -14,10 +12,10 @@ public class BrownPlatform : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_isFalling)
+        if (_isFalling)
         {
             transform.position -= new Vector3(0, 0.05f, 0);
-            _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, _spriteRenderer.color.a - 0.1f);  
+            _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, _spriteRenderer.color.a - 0.1f);
         }
     }
 

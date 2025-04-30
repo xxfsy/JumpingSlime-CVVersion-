@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -29,6 +27,7 @@ public class SoundManager : MonoBehaviour
         Debug.Log("Sound Manager Initilized");
 
         _backgroundMusicAudioSource.Play();
+
         _generalSoundsAudioSources[0] = _playerAudioSource;
         _generalSoundsAudioSources[1] = _objectsAudioSource;
         _generalSoundsAudioSources[2] = _coinAudioSource;
@@ -44,11 +43,11 @@ public class SoundManager : MonoBehaviour
 
     public void PlayObjectSound(int objectIndex)
     {
-        if (objectIndex == 0) // если звук слайма то в отдельную аудиосурс, чтобы слайм не прерывал звук объекта 
+        if (objectIndex == 0)
         {
             PlayPlayerSound(_objectsSounds[objectIndex]);
         }
-        else // звук объекта в отдельном аудиосурсе
+        else
         {
             _objectsAudioSource.clip = _objectsSounds[objectIndex];
             _objectsAudioSource.pitch = Random.Range(0.9f, 1.1f);
@@ -60,25 +59,10 @@ public class SoundManager : MonoBehaviour
     {
         _coinAudioSource.Play();
     }
-    
+
     public void PlayBrownPlatformSound()
     {
         _brownPlaformAudioSource.pitch = Random.Range(0.9f, 1.1f);
         _brownPlaformAudioSource.Play();
     }
-
-    //public void PlayJumpSound()
-    //{
-    //    _playerJumpSoundSource.Play();
-    //}
-
-    //public void PlayDieSound()
-    //{
-    //    _playerDieSound.Play();
-    //}
-
-    //public void PlayObjectSound(int indexOfObject)
-    //{
-    //    _objectsSounds[indexOfObject].Play();
-    //}
 }

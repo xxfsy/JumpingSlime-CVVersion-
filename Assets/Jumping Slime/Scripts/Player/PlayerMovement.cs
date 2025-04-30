@@ -5,16 +5,16 @@ using YG;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speedOfMovementXAxis = 5f;
-    [SerializeField] private float _maxNegativeYVelocity; 
+    [SerializeField] private float _maxNegativeYVelocity;
 
-    [SerializeField] private Joystick _joystickForMobile; 
-    public bool isPC; 
+    [SerializeField] private Joystick _joystickForMobile;
+    public bool isPC;
 
     private Rigidbody2D rb;
     private float _inputMovement;
 
     private Vector3 _lowerLeftCorner;
-    private Vector3 _playerLocalScale; 
+    private Vector3 _playerLocalScale;
 
     internal bool IsDead = false;
 
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         _lowerLeftCorner = _lowerLeftCorner = Camera.main.ScreenToWorldPoint(Vector3.zero);
         _playerLocalScale = transform.localScale;
 
-        while (!YandexGame.SDKEnabled) 
+        while (!YandexGame.SDKEnabled)
         {
             yield return new WaitForSeconds(0.2f);
         }
@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isPC) 
+        if (isPC)
             _inputMovement = Input.GetAxis("Horizontal");
         else
             _inputMovement = _joystickForMobile.Horizontal;
 
-        if (_inputMovement > 0) 
+        if (_inputMovement > 0)
         {
             transform.localScale = new Vector3(_playerLocalScale.x, _playerLocalScale.y);
         }
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void NegativeYVelocityBlock()
     {
-        if (rb.velocity.y < -6) 
+        if (rb.velocity.y < -6)
         {
             rb.velocity = new Vector2(rb.velocity.x, _maxNegativeYVelocity);
         }
@@ -83,15 +83,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void CheckingScreenEdge() 
+    private void CheckingScreenEdge()
     {
-        if(transform.position.x > -_lowerLeftCorner.x) 
+        if (transform.position.x > -_lowerLeftCorner.x)
         {
-            transform.position = new Vector3(_lowerLeftCorner.x, transform.position.y); 
+            transform.position = new Vector3(_lowerLeftCorner.x, transform.position.y);
         }
-        else if (transform.position.x < _lowerLeftCorner.x) 
+        else if (transform.position.x < _lowerLeftCorner.x)
         {
-            transform.position = new Vector3(-_lowerLeftCorner.x, transform.position.y); 
+            transform.position = new Vector3(-_lowerLeftCorner.x, transform.position.y);
         }
     }
 

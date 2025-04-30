@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinGenerator : MonoBehaviour
@@ -12,7 +10,7 @@ public class CoinGenerator : MonoBehaviour
     private void Start()
     {
         _coinSize = _coinPrefab.GetComponent<Renderer>().bounds.size;
-        _lowerLeftCornerPosition = _lowerLeftCornerPosition = Camera.main.ScreenToWorldPoint(Vector3.zero); 
+        _lowerLeftCornerPosition = _lowerLeftCornerPosition = Camera.main.ScreenToWorldPoint(Vector3.zero);
     }
 
     public void GenerateCoin(Vector3 platformPoisition)

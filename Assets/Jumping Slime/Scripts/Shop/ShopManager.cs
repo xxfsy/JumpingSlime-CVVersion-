@@ -69,7 +69,7 @@ public class ShopManager : MonoBehaviour
         {
             _playerCostText.SetText($"{_players[index].Cost}");
 
-            switch(YandexGame.lang)
+            switch (YandexGame.lang)
             {
                 case "ru":
                     _playerBuyButtonText.SetText("Êóïèòü");
@@ -102,8 +102,8 @@ public class ShopManager : MonoBehaviour
                     break;
 
                 case "tr":
-                    _playerCostText.SetText("Sat?n Al?nd?");
-                    _playerBuyButtonText.SetText("Se?mek");
+                    _playerCostText.SetText("Satin Alindi");
+                    _playerBuyButtonText.SetText("Señmek");
                     break;
 
                 default:
@@ -125,8 +125,8 @@ public class ShopManager : MonoBehaviour
                     break;
 
                 case "tr":
-                    _playerCostText.SetText("Sat?n Al?nd?");
-                    _playerBuyButtonText.SetText("Se?me");
+                    _playerCostText.SetText("Satin Alindi");
+                    _playerBuyButtonText.SetText("Secme");
                     break;
 
                 default:
@@ -176,8 +176,8 @@ public class ShopManager : MonoBehaviour
                     break;
 
                 case "tr":
-                    _backgroundCostText.SetText("Sat?n Al?nd?");
-                    _backgroundBuyButtonText.SetText("Se?mek");
+                    _backgroundCostText.SetText("Satin Alindi");
+                    _backgroundBuyButtonText.SetText("Secmek");
                     break;
 
                 default:
@@ -200,8 +200,8 @@ public class ShopManager : MonoBehaviour
                     break;
 
                 case "tr":
-                    _backgroundCostText.SetText("Sat?n Al?nd?");
-                    _backgroundBuyButtonText.SetText("Se?me");
+                    _backgroundCostText.SetText("Satin Alindi");
+                    _backgroundBuyButtonText.SetText("Secme");
                     break;
 
                 default:
@@ -268,12 +268,13 @@ public class ShopManager : MonoBehaviour
 
     public void BuyPlayerSkin()
     {
-        if(!_players[_currentPlayersIndex].IsBought && _coinsCount >= _players[_currentPlayersIndex].Cost)
+        if (!_players[_currentPlayersIndex].IsBought && _coinsCount >= _players[_currentPlayersIndex].Cost)
         {
             _coinsCount -= _players[_currentPlayersIndex].Cost;
             _coinsText.SetText($"{_coinsCount}");
 
             DateManager.Instance.SaveCoins(_coinsCount);
+
             _players[_currentChosenPlayerSkin.IndexInArray].IsChoosen = false;
 
             _players[_currentPlayersIndex].IsBought = true;
@@ -284,7 +285,7 @@ public class ShopManager : MonoBehaviour
 
             SetPlayerInfoOnUi(_currentPlayersIndex);
         }
-        else if(_players[_currentPlayersIndex].IsBought)
+        else if (_players[_currentPlayersIndex].IsBought)
         {
             _players[_currentChosenPlayerSkin.IndexInArray].IsChoosen = false;
 
@@ -295,7 +296,7 @@ public class ShopManager : MonoBehaviour
 
             SetPlayerInfoOnUi(_currentPlayersIndex);
         }
-        else 
+        else
         {
             _rewardManager.SuggestReward();
         }
@@ -325,7 +326,7 @@ public class ShopManager : MonoBehaviour
         else if (_backgrounds[_currentBackgroundIndex].IsBought)
         {
             _backgrounds[_currentChosenBackgroundSkin.IndexInArray].IsChoosen = false;
-          
+
             _backgrounds[_currentBackgroundIndex].IsChoosen = true;
             _currentChosenBackgroundSkin = _backgrounds[_currentBackgroundIndex];
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class ScoreShowing : MonoBehaviour
 {
     private TextMeshProUGUI _text;
-    private bool _isSDKReady = false;
 
     private IEnumerator Start()
     {
@@ -13,20 +12,14 @@ public class ScoreShowing : MonoBehaviour
         {
             yield return new WaitForSeconds(0.2f);
         }
-        _isSDKReady = true;
 
         _text = GetComponent<TextMeshProUGUI>();
-        UpdateScoreText();
+        _text.SetText(_text.text + " " + $"<color=red>{DateManager.Instance.BestScore}</color>");
     }
 
     private void OnEnable()
     {
-        if (_isSDKReady)
-            UpdateScoreText();
-    }
-
-    private void UpdateScoreText()
-    {
-        _text.SetText(_text.text + " " + $"<color=red>{DateManager.Instance.BestScore}</color>");
+        if (DateManager.Instance.IsDateLoad)
+            _text.SetText(_text.text + " " + $"<color=red>{DateManager.Instance.BestScore}</color>");
     }
 }

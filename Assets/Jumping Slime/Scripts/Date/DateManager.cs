@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
@@ -19,13 +18,16 @@ public class DateManager : MonoBehaviour
     public SkinInfo CurrentPlayerSkin => _currentPlayerSkin;
     public SkinInfo CurrentBackgroundSkin => _currentBackgroundSkin;
 
+    [SerializeField] private int _nextRewardSuggestionTimeForShop;
+    public int NextRewardSuggestionTimeForShop => _nextRewardSuggestionTimeForShop;
+
     private bool _isDateLoad = false;
     public bool IsDateLoad => _isDateLoad;
 
-    public void Initialize() 
+    public void Initialize()
     {
         Debug.Log("Date Manager Start Initialize");
-        if(Instance != null)
+        if (Instance != null)
         {
             throw new UnityException("One Date Manager Instance only!");
         }
@@ -58,7 +60,7 @@ public class DateManager : MonoBehaviour
 
     private IEnumerator LoadDateFromCloud()
     {
-        while(!YandexGame.SDKEnabled)
+        while (!YandexGame.SDKEnabled)
         {
             yield return new WaitForSeconds(0.2f);
         }
@@ -68,7 +70,7 @@ public class DateManager : MonoBehaviour
         _coinsCount = YandexGame.savesData.CoinsCount;
         _bestScore = YandexGame.savesData.BestScore;
 
-        if(!YandexGame.savesData.IsFirstVisit)
+        if (!YandexGame.savesData.IsFirstVisit)
         {
             _players = JsonHelper.FromJson<SkinInfo>(YandexGame.savesData.PlayerSkins);
             _backgrounds = JsonHelper.FromJson<SkinInfo>(YandexGame.savesData.BackgroundSkins);
@@ -104,7 +106,7 @@ public class DateManager : MonoBehaviour
     public void SaveBestScore(int score)
     {
         _bestScore = score;
-    }    
+    }
 
     public void UpdateCurrentPlayerSkin(SkinInfo currentPlayerSkin)
     {
@@ -114,5 +116,10 @@ public class DateManager : MonoBehaviour
     public void UpdateCurrentBackgroundSkin(SkinInfo currentBackgroundSkin)
     {
         _currentBackgroundSkin = currentBackgroundSkin;
+    }
+
+    public void UpdateNextRewardSuggestionTimeForShop(int time)
+    {
+        _nextRewardSuggestionTimeForShop = time;
     }
 }

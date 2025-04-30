@@ -29,7 +29,7 @@ public class PlatformSpawner : MonoBehaviour
 
     private PlatformSkinChanger _platformSkinChanger;
 
-    [SerializeField] private int _yCordValueToStartSpawningBluePlatforms = 100; 
+    [SerializeField] private int _yCordValueToStartSpawningBluePlatforms = 100;
 
     private void Start()
     {

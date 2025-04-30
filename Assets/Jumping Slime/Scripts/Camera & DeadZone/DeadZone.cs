@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
@@ -34,7 +32,7 @@ public class DeadZone : MonoBehaviour
         {
             _playerCollision = collision;
 
-            if (!_isDeadZoneMoved) 
+            if (!_isDeadZoneMoved)
             {
                 if (!_isRewardSuggested)
                 {
@@ -71,9 +69,8 @@ public class DeadZone : MonoBehaviour
     public void WatchRewardVid()
     {
         Time.timeScale = 0;
-
-        //YandexGame.RewVideoShow(0); // выключил чтобы не было рекламы в версии для резюме
-        GiveSecondLive(0); // for resume version
+        // YandexGame.RewVideoShow(0); turned of ads for CV version
+        GiveSecondLive(0); // for CV version
     }
 
     private void GiveSecondLive(int index)
@@ -83,6 +80,7 @@ public class DeadZone : MonoBehaviour
             if (YandexGame.EnvironmentData.isMobile)
             {
                 _joystick.SetActive(true);
+                _joystick.GetComponent<Joystick>().ResetInput();
             }
 
             _topPanelUI.SetActive(true);

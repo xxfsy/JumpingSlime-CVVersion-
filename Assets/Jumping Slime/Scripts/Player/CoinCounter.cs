@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -15,13 +13,13 @@ public class CoinCounter : MonoBehaviour
         _coinsCountText = _coinsCountGameObject.GetComponent<TextMeshProUGUI>();
 
         _coinCount = DateManager.Instance.CoinsCount;
-        
+
         _coinsCountText.SetText($"{_coinCount}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Coin"))
+        if (collision.CompareTag("Coin"))
         {
             SoundManager.Instance.PlayCoinSound();
 
