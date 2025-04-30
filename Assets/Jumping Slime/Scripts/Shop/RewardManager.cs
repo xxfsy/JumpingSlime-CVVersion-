@@ -16,7 +16,7 @@ public class RewardManager : MonoBehaviour
     {
         _timeOffset = _rewardSuggestionCDInSec;
 
-        _nextRewardSuggestionTime = DateManager.Instance.NextRewardSuggestionTimeForShop;
+        _nextRewardSuggestionTime = DataManager.Instance.NextRewardSuggestionTimeForShop;
     }
 
     private void OnEnable()
@@ -44,7 +44,7 @@ public class RewardManager : MonoBehaviour
     public void WatchRewardVid()
     {
         _nextRewardSuggestionTime += (int)Time.time + _rewardSuggestionCDInSec;
-        DateManager.Instance.UpdateNextRewardSuggestionTimeForShop(_nextRewardSuggestionTime);
+        DataManager.Instance.UpdateNextRewardSuggestionTimeForShop(_nextRewardSuggestionTime);
         Time.timeScale = 0;
         YandexGame.RewVideoShow(1);
     }
@@ -55,8 +55,8 @@ public class RewardManager : MonoBehaviour
         {
             Time.timeScale = 1;
 
-            DateManager.Instance.SaveCoins(DateManager.Instance.CoinsCount + _coinsForReward);
-            _coinsText.SetText($"{DateManager.Instance.CoinsCount}");
+            DataManager.Instance.SaveCoins(DataManager.Instance.CoinsCount + _coinsForReward);
+            _coinsText.SetText($"{DataManager.Instance.CoinsCount}");
 
             _rewardWindow.SetActive(false);
             _shopPanel.SetActive(true);

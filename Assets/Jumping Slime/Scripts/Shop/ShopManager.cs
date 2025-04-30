@@ -34,7 +34,7 @@ public class ShopManager : MonoBehaviour
 
     public void CheckAfterReward(int index)
     {
-        _coinsCount = DateManager.Instance.CoinsCount;
+        _coinsCount = DataManager.Instance.CoinsCount;
         SetPlayerInfoOnUi(_currentPlayersIndex);
         SetBackgroundInfoOnUi(_currentBackgroundIndex);
     }
@@ -46,11 +46,11 @@ public class ShopManager : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
-        _players = DateManager.Instance.Players;
-        _backgrounds = DateManager.Instance.Backgrounds;
-        _coinsCount = DateManager.Instance.CoinsCount;
-        _currentChosenPlayerSkin = DateManager.Instance.CurrentPlayerSkin;
-        _currentChosenBackgroundSkin = DateManager.Instance.CurrentBackgroundSkin;
+        _players = DataManager.Instance.Players;
+        _backgrounds = DataManager.Instance.Backgrounds;
+        _coinsCount = DataManager.Instance.CoinsCount;
+        _currentChosenPlayerSkin = DataManager.Instance.CurrentPlayerSkin;
+        _currentChosenBackgroundSkin = DataManager.Instance.CurrentBackgroundSkin;
 
         _coinsText.SetText($"{_coinsCount}");
 
@@ -273,7 +273,7 @@ public class ShopManager : MonoBehaviour
             _coinsCount -= _players[_currentPlayersIndex].Cost;
             _coinsText.SetText($"{_coinsCount}");
 
-            DateManager.Instance.SaveCoins(_coinsCount);
+            DataManager.Instance.SaveCoins(_coinsCount);
 
             _players[_currentChosenPlayerSkin.IndexInArray].IsChoosen = false;
 
@@ -281,7 +281,7 @@ public class ShopManager : MonoBehaviour
             _players[_currentPlayersIndex].IsChoosen = true;
             _currentChosenPlayerSkin = _players[_currentPlayersIndex];
 
-            DateManager.Instance.UpdateCurrentPlayerSkin(_currentChosenPlayerSkin);
+            DataManager.Instance.UpdateCurrentPlayerSkin(_currentChosenPlayerSkin);
 
             SetPlayerInfoOnUi(_currentPlayersIndex);
         }
@@ -292,7 +292,7 @@ public class ShopManager : MonoBehaviour
             _players[_currentPlayersIndex].IsChoosen = true;
             _currentChosenPlayerSkin = _players[_currentPlayersIndex];
 
-            DateManager.Instance.UpdateCurrentPlayerSkin(_currentChosenPlayerSkin);
+            DataManager.Instance.UpdateCurrentPlayerSkin(_currentChosenPlayerSkin);
 
             SetPlayerInfoOnUi(_currentPlayersIndex);
         }
@@ -309,7 +309,7 @@ public class ShopManager : MonoBehaviour
             _coinsCount -= _backgrounds[_currentBackgroundIndex].Cost;
             _coinsText.SetText($"{_coinsCount}");
 
-            DateManager.Instance.SaveCoins(_coinsCount);
+            DataManager.Instance.SaveCoins(_coinsCount);
 
             _backgrounds[_currentBackgroundIndex].IsBought = true;
 
@@ -319,7 +319,7 @@ public class ShopManager : MonoBehaviour
             _backgrounds[_currentBackgroundIndex].IsChoosen = true;
             _currentChosenBackgroundSkin = _backgrounds[_currentBackgroundIndex];
 
-            DateManager.Instance.UpdateCurrentBackgroundSkin(_currentChosenBackgroundSkin);
+            DataManager.Instance.UpdateCurrentBackgroundSkin(_currentChosenBackgroundSkin);
 
             SetBackgroundInfoOnUi(_currentBackgroundIndex);
         }
@@ -330,7 +330,7 @@ public class ShopManager : MonoBehaviour
             _backgrounds[_currentBackgroundIndex].IsChoosen = true;
             _currentChosenBackgroundSkin = _backgrounds[_currentBackgroundIndex];
 
-            DateManager.Instance.UpdateCurrentBackgroundSkin(_currentChosenBackgroundSkin);
+            DataManager.Instance.UpdateCurrentBackgroundSkin(_currentChosenBackgroundSkin);
 
             SetBackgroundInfoOnUi(_currentBackgroundIndex);
         }

@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
 
-public class DateManager : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
-    public static DateManager Instance { get; private set; }
+    public static DataManager Instance { get; private set; }
 
     private int _coinsCount;
     public int CoinsCount => _coinsCount;

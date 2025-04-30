@@ -23,8 +23,8 @@ public class ScoreCounter : MonoBehaviour
             _maxScore = Mathf.RoundToInt(transform.position.y * 100);
             _scoreText.SetText($"{_maxScore}");
 
-            if (_maxScore > DateManager.Instance.BestScore)
-                DateManager.Instance.SaveBestScore(_maxScore);
+            if (_maxScore > DataManager.Instance.BestScore)
+                DataManager.Instance.SaveBestScore(_maxScore);
 
         }
     }

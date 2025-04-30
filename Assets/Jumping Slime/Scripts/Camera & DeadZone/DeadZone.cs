@@ -79,8 +79,8 @@ public class DeadZone : MonoBehaviour
         {
             if (YandexGame.EnvironmentData.isMobile)
             {
-                _joystick.SetActive(true);
                 _joystick.GetComponent<Joystick>().ResetInput();
+                _joystick.SetActive(true);
             }
 
             _topPanelUI.SetActive(true);

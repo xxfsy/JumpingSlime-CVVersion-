@@ -26,7 +26,7 @@ public class SceneSwitcher : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
 
-        SceneManager.sceneLoaded += DateManager.Instance.SaveToCloud;
+        SceneManager.sceneLoaded += DataManager.Instance.SaveToCloud;
         SceneManager.sceneLoaded += TryToSuggestGiveRating;
 
         Debug.Log("SceneSwitcher Start Initialized");
@@ -35,7 +35,7 @@ public class SceneSwitcher : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log("Disabled");
-        SceneManager.sceneLoaded -= DateManager.Instance.SaveToCloud;
+        SceneManager.sceneLoaded -= DataManager.Instance.SaveToCloud;
         SceneManager.sceneLoaded -= TryToSuggestGiveRating;
     }
 

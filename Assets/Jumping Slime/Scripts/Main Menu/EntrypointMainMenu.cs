@@ -16,9 +16,9 @@ public class EntrypointMainMenu : MonoBehaviour
             SoundManager soundManagerComponent = soundManager.GetComponent<SoundManager>();
             soundManagerComponent.Initialize();
 
-            GameObject dateManager = Instantiate(_dateManager);
-            DateManager dateManagerComponent = dateManager.GetComponent<DateManager>();
-            dateManagerComponent.Initialize();
+            GameObject dataManager = Instantiate(_dateManager);
+            DataManager dataManagerComponent = dataManager.GetComponent<DataManager>();
+            dataManagerComponent.Initialize();
 
             GameObject sceneSwitcher = Instantiate(_sceneSwitcher);
             SceneSwitcher sceneSwitcherComponent = sceneSwitcher.GetComponent<SceneSwitcher>();

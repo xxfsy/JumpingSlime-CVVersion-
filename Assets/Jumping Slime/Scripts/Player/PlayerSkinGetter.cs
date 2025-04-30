@@ -9,9 +9,9 @@ public class PlayerSkinGetter : MonoBehaviour
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.sprite = DateManager.Instance.CurrentPlayerSkin.SkinSprite;
-        _spriteRenderer.color = DateManager.Instance.CurrentPlayerSkin.SkinColor;
+        _spriteRenderer.sprite = DataManager.Instance.CurrentPlayerSkin.SkinSprite;
+        _spriteRenderer.color = DataManager.Instance.CurrentPlayerSkin.SkinColor;
 
-        _background.sprite = DateManager.Instance.CurrentBackgroundSkin.SkinSprite;
+        _background.sprite = DataManager.Instance.CurrentBackgroundSkin.SkinSprite;
     }
 }

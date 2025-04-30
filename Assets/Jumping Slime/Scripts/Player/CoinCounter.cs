@@ -12,7 +12,7 @@ public class CoinCounter : MonoBehaviour
     {
         _coinsCountText = _coinsCountGameObject.GetComponent<TextMeshProUGUI>();
 
-        _coinCount = DateManager.Instance.CoinsCount;
+        _coinCount = DataManager.Instance.CoinsCount;
 
         _coinsCountText.SetText($"{_coinCount}");
     }
@@ -26,7 +26,7 @@ public class CoinCounter : MonoBehaviour
             _coinCount++;
             _coinsCountText.SetText($"{_coinCount}");
 
-            DateManager.Instance.SaveCoins(_coinCount);
+            DataManager.Instance.SaveCoins(_coinCount);
 
             Destroy(collision.gameObject);
         }
